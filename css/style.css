@@ -1,14 +1,93 @@
 @import url(fonts.css);
+:root {
+  --dim: rgba(0,0,0,0.5);
+  --dim-background: linear-gradient(var(--dim), var(--dim));
+  --light: #f9f9f9;
+}
+html, body { margin: 0px; }
+body * {
+  font-family: Comfortaa, sans-serif;
+}
 
 #navbar {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #ffffff;
-  display: block;
-  color: white;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 100px;
   text-decoration: none;
+  position: sticky;
+  top: 0px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+  z-index: 2;
+}
+
+#navbar a, #navbar a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+#navbar nav {
+  display: flex;
+  gap: 24px;
+}
+
+header section {
+  background: var(--dim-background), url("../header.webp");
+  background-size: cover;
+  background-position: center;
+  height: 705px;
+}
+
+#title {
+  position: absolute;
+  top: 40%;
+  left: 100px;
+  color: white;
+}
+
+#title h1 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#title p {
+  font-size: 24px;
+  width: 69%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  margin: 120px 0px;
+}
+
+main p, main li {
+  font-size: 16px;
+  line-height: 24px;
+}
+main li {font-weight: bold;}
+main section {
+  padding: 24px 120px;
+}
+
+.info { display: flex; }
+.info > * { width: 50%; }
+.dimmer { background: var(--light); }
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.certs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.certs img {
+  width: 187px;
 }
