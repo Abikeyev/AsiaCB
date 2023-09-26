@@ -2,6 +2,7 @@
 :root {
   --dim: rgba(0,0,0,0.5);
   --dim-background: linear-gradient(var(--dim), var(--dim));
+  --dim-drop: linear-gradient(transparent 0%, transparent 10%, var(--dim) 20%, var(--dim) 100%);
   --light: #f9f9f9;
 }
 html, body { margin: 0px; }
@@ -17,7 +18,7 @@ body * {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 16px 100px;
+  padding: 16px 10vw;
   text-decoration: none;
   position: sticky;
   top: 0px;
@@ -30,9 +31,13 @@ body * {
   color: black;
 }
 
-#navbar nav {
+#navbar > nav {
   display: flex;
+  align-items: center;
   gap: 24px;
+}
+#hamburger, .menu, #hm_label {
+  display: none;
 }
 
 header section {
@@ -90,4 +95,93 @@ h2 {
 
 .certs img {
   width: 187px;
+}
+
+@keyframes dim_menu {
+  from {
+    display: block;
+    background: var(--dim-drop);
+    opacity: 0;
+  }
+  to {
+    display: block;
+    background: var(--dim-drop);
+    opacity: 1;
+  }
+}
+
+@media(max-width: 1024px) {
+  #navbar {
+    padding: 16px 3vw;
+  }
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .info > * {
+    width: 100%;
+  }
+}
+@media(max-width: 768px) {
+  #navbar > nav { display: none; }
+  #hamburger {
+    display: none;
+    width: 2rem;
+    transition: width 0.3s, transform 0.3s;
+  }
+  #hamburger:checked {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    appearance: none;
+    transition: width 0.3s, transform 0.3s, opacity 0.3s;
+    z-index: -3;
+    animation: dim_menu 0.4s forwards;
+    margin: 0px;
+  }
+  #hm_label {
+    display: block;
+    width: 2rem;
+    transition: width 0.3s, opacity 0.3s;
+  }
+  #hamburger:checked ~ #hm_label {
+      opacity: 0;
+      width: 0;
+      transition: width 0.3s, opacity 0.3s;
+  }
+  .menu {
+    position: absolute;
+    top: 94px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 1rem 0rem;
+    transform: translateY(-101vw);
+    transition: transform 0.4s;
+    width: 100vw;
+    z-index: -2;
+  }
+  #hamburger:checked ~ .menu {
+    transform: translateY(0vw);
+    transition: transform 0.4s box-shadow 0.5s;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+  }
+  .menu a {
+    margin: 1rem;
+  }
+}
+@media(max-width: 640px) {
+  #title {
+    left: 5vw;
+  }
+  .info, .certs {
+    padding: 24px 5vw;
+  }
 }

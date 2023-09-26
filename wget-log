@@ -1,16 +1,0 @@
---2023-09-24 13:16:53--  https://unsplash.com/photos/91AQt9p4Mo8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTF8fGNvbnN0cnVjdGlvbnxlbnwwfHx8fDE2OTU0OTIyNzd8MA
-Resolving unsplash.com (unsplash.com)... 151.101.193.181, 151.101.129.181, 151.101.1.181, ...
-Connecting to unsplash.com (unsplash.com)|151.101.193.181|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://images.unsplash.com/photo-1565008447742-97f6f38c985c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb [following]
---2023-09-24 13:16:54--  https://images.unsplash.com/photo-1565008447742-97f6f38c985c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb
-Resolving images.unsplash.com (images.unsplash.com)... 146.75.122.208, 2a04:4e42:8d::720
-Connecting to images.unsplash.com (images.unsplash.com)|146.75.122.208|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 2877352 (2.7M) [image/jpeg]
-Saving to: ‘download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTF8fGNvbnN0cnVjdGlvbnxlbnwwfHx8fDE2OTU0OTIyNzd8MA’
-
-                           download?ixid=M3wxMjA3fDB8M   0%[                                                                                                                           ]       0  --.-KB/s                                         download?ixid=M3wxMjA3fDB8MX   3%[===>                                                                                                                       ] 104.00K   511KB/s                                        download?ixid=M3wxMjA3fDB8MXx  18%[=====================>                                                                                                     ] 520.00K  1.25MB/s                                       download?ixid=M3wxMjA3fDB8MXxz  59%[=======================================================================>                                                   ]   1.63M  2.66MB/s                                      download?ixid=M3wxMjA3fDB8MXxzZ  77%[==============================================================================================>                            ]   2.14M  2.56MB/s               download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTF8fGNvbnN0cnVj 100%[==========================================================================================================================>]   2.74M  3.25MB/s    in 0.8s    
-
-2023-09-24 13:16:55 (3.25 MB/s) - ‘download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MTF8fGNvbnN0cnVjdGlvbnxlbnwwfHx8fDE2OTU0OTIyNzd8MA’ saved [2877352/2877352]
-
