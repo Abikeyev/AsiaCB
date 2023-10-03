@@ -44,22 +44,26 @@ header section {
   background: var(--dim-background), url("../header.webp");
   background-size: cover;
   background-position: center;
-  height: 705px;
+  height: 300px;
 }
+.home_header section { height: 705px; }
 
-#title {
+.title, #title {
   position: absolute;
-  top: 40%;
+  top: 190px;
   left: 100px;
   color: white;
 }
+#title {
+  top: 380px;
+}
 
-#title h1 {
+.title h1, #title h1 {
   font-size: 40px;
   font-weight: 600;
 }
 
-#title p {
+.title p, #title p {
   font-size: 24px;
   width: 69%;
 }
