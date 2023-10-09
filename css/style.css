@@ -1,15 +1,24 @@
 @import url(fonts.css);
 :root {
-  --dim: rgba(0,0,0,0.5);
+  --dim: rgba(0, 0, 0, 0.5);
   --dim-background: linear-gradient(var(--dim), var(--dim));
-  --dim-drop: linear-gradient(transparent 0%, transparent 10%, var(--dim) 20%, var(--dim) 100%);
+  --dim-drop: linear-gradient(
+    transparent 0%,
+    transparent 30%,
+    var(--dim) 35%,
+    var(--dim) 100%
+  );
   --light: #f9f9f9;
 }
-html, body { margin: 0px; }
+html,
+body {
+  margin: 0px;
+}
 body * {
   font-family: Comfortaa, sans-serif;
 }
 
+/* Navigation Bar */
 #navbar {
   list-style-type: none;
   margin: 0;
@@ -22,11 +31,12 @@ body * {
   text-decoration: none;
   position: sticky;
   top: 0px;
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 
-#navbar a, #navbar a:visited {
+#navbar a,
+#navbar a:visited {
   text-decoration: none;
   color: black;
 }
@@ -36,19 +46,26 @@ body * {
   align-items: center;
   gap: 24px;
 }
-#hamburger, .menu, #hm_label {
+
+#hamburger,
+.menu,
+#hm_label {
   display: none;
 }
 
+/* Header part, the one with a background photo */
 header section {
   background: var(--dim-background), url("../header.webp");
   background-size: cover;
   background-position: center;
   height: 300px;
 }
-.home_header section { height: 705px; }
+.home_header section {
+  height: 705px;
+}
 
-.title, #title {
+.title,
+#title {
   position: absolute;
   top: 190px;
   left: 100px;
@@ -58,16 +75,19 @@ header section {
   top: 380px;
 }
 
-.title h1, #title h1 {
+.title h1,
+#title h1 {
   font-size: 40px;
   font-weight: 600;
 }
 
-.title p, #title p {
+.title p,
+#title p {
   font-size: 24px;
   width: 69%;
 }
 
+/* Main body of the site */
 main {
   display: flex;
   flex-direction: column;
@@ -75,18 +95,27 @@ main {
   margin: 120px 0px;
 }
 
-main p, main li {
+main p,
+main li {
   font-size: 16px;
   line-height: 24px;
 }
-main li {font-weight: bold;}
+main li {
+  font-weight: bold;
+}
 main section {
   padding: 24px 120px;
 }
 
-.info { display: flex; }
-.info > * { width: 50%; }
-.dimmer { background: var(--light); }
+.info {
+  display: flex;
+}
+.info > * {
+  width: 50%;
+}
+.dimmer {
+  background: var(--light);
+}
 h2 {
   font-size: 40px;
   font-weight: 600;
@@ -114,7 +143,7 @@ h2 {
   }
 }
 
-@media(max-width: 1024px) {
+@media (max-width: 1024px) {
   #navbar {
     padding: 16px 3vw;
   }
@@ -126,12 +155,16 @@ h2 {
     width: 100%;
   }
 }
-@media(max-width: 768px) {
-  #navbar > nav { display: none; }
+@media (max-width: 768px) {
+  #navbar > nav {
+    display: none;
+  }
   #hamburger {
     display: none;
     width: 2rem;
-    transition: width 0.3s, transform 0.3s;
+    transition:
+      width 0.3s,
+      transform 0.3s;
   }
   #hamburger:checked {
     display: block;
@@ -143,7 +176,10 @@ h2 {
     width: 100vw;
     height: 100vh;
     appearance: none;
-    transition: width 0.3s, transform 0.3s, opacity 0.3s;
+    transition:
+      width 0.3s,
+      transform 0.3s,
+      opacity 0.3s;
     z-index: -3;
     animation: dim_menu 0.4s forwards;
     margin: 0px;
@@ -151,12 +187,16 @@ h2 {
   #hm_label {
     display: block;
     width: 2rem;
-    transition: width 0.3s, opacity 0.3s;
+    transition:
+      width 0.3s,
+      opacity 0.3s;
   }
   #hamburger:checked ~ #hm_label {
-      opacity: 0;
-      width: 0;
-      transition: width 0.3s, opacity 0.3s;
+    opacity: 0;
+    width: 0;
+    transition:
+      width 0.3s,
+      opacity 0.3s;
   }
   .menu {
     position: absolute;
@@ -175,17 +215,18 @@ h2 {
   #hamburger:checked ~ .menu {
     transform: translateY(0vw);
     transition: transform 0.4s box-shadow 0.5s;
-    box-shadow: 0px 3px 3px rgba(0,0,0,0.3);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
   }
   .menu a {
     margin: 1rem;
   }
 }
-@media(max-width: 640px) {
+@media (max-width: 640px) {
   #title {
     left: 5vw;
   }
-  .info, .certs {
+  .info,
+  .certs {
     padding: 24px 5vw;
   }
 }
