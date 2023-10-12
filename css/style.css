@@ -1,6 +1,7 @@
 @import url(fonts.css);
 :root {
   --dim: rgba(0, 0, 0, 0.5);
+  --dim-light: rgba(0, 0, 0, 0.1);
   --dim-background: linear-gradient(var(--dim), var(--dim));
   --dim-drop: linear-gradient(
     transparent 0%,
@@ -91,6 +92,7 @@ header section {
 main {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 120px;
   margin: 120px 0px;
 }
@@ -128,6 +130,45 @@ h2 {
 
 .certs img {
   width: 187px;
+}
+
+/* Tables in other pages */
+#tables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vw;
+  padding: 0vw 2vw;
+}
+.tables {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  overflow: scroll;
+  border-radius: 11px;
+  border: 1px solid var(--dim-light);
+}
+#tables h2 {
+  width: 90vw;
+}
+table {
+  text-align: center;
+  /* box-shadow: inset 0px 0px 5px var(--dim-light); */
+  border-radius: 10px;
+  background: white;
+  border: 1px solid var(--dim-light);
+}
+tr:nth-child(even) {
+  background: var(--light);
+}
+td,
+th {
+  padding: 1rem;
+}
+
+tr {
+  border-bottom: 1px solid var(--dim-light);
+  box-sizing: border-box;
 }
 
 @keyframes dim_menu {
@@ -222,11 +263,13 @@ h2 {
   }
 }
 @media (max-width: 640px) {
-  #title {
+  #title,
+  .title {
     left: 5vw;
   }
   .info,
-  .certs {
+  .certs,
+  main section {
     padding: 24px 5vw;
   }
 }
