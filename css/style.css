@@ -126,10 +126,91 @@ h2 {
 .certs {
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: center; */
 }
 
 .certs img {
   width: 187px;
+}
+
+/* certificates page selector */
+
+@keyframes dim_back {
+  from {
+    display: block;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes emerge {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#certificates {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#img1,
+#img2,
+#img3,
+#img4,
+#img5,
+#img6,
+#img7,
+#img8,
+#img9 {
+  display: none;
+}
+
+#img1:checked,
+#img2:checked,
+#img3:checked,
+#img4:checked,
+#img5:checked,
+#img6:checked,
+#img7:checked,
+#img8:checked,
+#img9:checked {
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  appearance: none;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  animation: dim_back 0.3s;
+}
+
+#img1:checked ~ #certificates > label[for="img1"] > img,
+#img2:checked ~ #certificates > label[for="img2"] > img,
+#img3:checked ~ #certificates > label[for="img3"] > img,
+#img4:checked ~ #certificates > label[for="img4"] > img,
+#img5:checked ~ #certificates > label[for="img5"] > img,
+#img6:checked ~ #certificates > label[for="img6"] > img,
+#img7:checked ~ #certificates > label[for="img7"] > img,
+#img8:checked ~ #certificates > label[for="img8"] > img,
+#img9:checked ~ #certificates > label[for="img9"] > img {
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+  width: 90vw;
+  height: 90vh;
+  object-fit: contain;
+  z-index: 3;
+  animation: emerge 0.3s;
 }
 
 /* Tables in other pages */
@@ -169,6 +250,32 @@ th {
 tr {
   border-bottom: 1px solid var(--dim-light);
   box-sizing: border-box;
+}
+
+/* footer of the page */
+footer {
+  background: black;
+  color: white;
+  padding: 1rem;
+  font-size: 10px;
+}
+footer ul {
+  margin: 0px;
+  padding: 0px;
+}
+footer li {
+  list-style-type: none;
+  margin: 0.5rem;
+}
+
+footer a,
+footer a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 @keyframes dim_menu {
@@ -260,6 +367,10 @@ tr {
   }
   .menu a {
     margin: 1rem;
+  }
+  #certificates,
+  .certs {
+    justify-content: center;
   }
 }
 @media (max-width: 640px) {
