@@ -126,11 +126,14 @@ h2 {
 .certs {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  width: calc(100% - 240px);
   /* justify-content: center; */
 }
 
 .certs img {
   width: 187px;
+  box-shadow: 0px 0px 1px var(--dim);
 }
 
 /* certificates page selector */
@@ -160,6 +163,7 @@ h2 {
   flex-wrap: wrap;
 }
 
+#imgl,
 #img1,
 #img2,
 #img3,
@@ -172,6 +176,7 @@ h2 {
   display: none;
 }
 
+#imgl:checked,
 #img1:checked,
 #img2:checked,
 #img3:checked,
@@ -194,23 +199,48 @@ h2 {
   animation: dim_back 0.3s;
 }
 
-#img1:checked ~ #certificates > label[for="img1"] > img,
-#img2:checked ~ #certificates > label[for="img2"] > img,
-#img3:checked ~ #certificates > label[for="img3"] > img,
-#img4:checked ~ #certificates > label[for="img4"] > img,
-#img5:checked ~ #certificates > label[for="img5"] > img,
-#img6:checked ~ #certificates > label[for="img6"] > img,
-#img7:checked ~ #certificates > label[for="img7"] > img,
-#img8:checked ~ #certificates > label[for="img8"] > img,
-#img9:checked ~ #certificates > label[for="img9"] > img {
+.img {
+  overflow: hidden;
+  width: 187px;
+  aspect-ratio: 1 / 1.4;
+  margin: 0.3rem;
+  box-shadow: 0px 0px 3px var(--dim);
+}
+
+#imgl:checked ~ #certificates > label[for="imgl"] > .img,
+#img1:checked ~ #certificates > label[for="img1"] > .img,
+#img2:checked ~ #certificates > label[for="img2"] > .img,
+#img3:checked ~ #certificates > label[for="img3"] > .img,
+#img4:checked ~ #certificates > label[for="img4"] > .img,
+#img5:checked ~ #certificates > label[for="img5"] > .img,
+#img6:checked ~ #certificates > label[for="img6"] > .img,
+#img7:checked ~ #certificates > label[for="img7"] > .img,
+#img8:checked ~ #certificates > label[for="img8"] > .img,
+#img9:checked ~ #certificates > label[for="img9"] > .img {
   position: fixed;
   top: 5vh;
   left: 5vw;
   width: 90vw;
   height: 90vh;
-  object-fit: contain;
+  /* object-fit: contain; */
+  overflow: scroll;
   z-index: 3;
   animation: emerge 0.3s;
+}
+
+#imgl:checked ~ #certificates > label[for="imgl"] img,
+#img1:checked ~ #certificates > label[for="img1"] img,
+#img2:checked ~ #certificates > label[for="img2"] img,
+#img3:checked ~ #certificates > label[for="img3"] img,
+#img4:checked ~ #certificates > label[for="img4"] img,
+#img5:checked ~ #certificates > label[for="img5"] img,
+#img6:checked ~ #certificates > label[for="img6"] img,
+#img7:checked ~ #certificates > label[for="img7"] img,
+#img8:checked ~ #certificates > label[for="img8"] img,
+#img9:checked ~ #certificates > label[for="img9"] img {
+  object-fit: contain;
+  width: 100%;
+  background: white;
 }
 
 /* Tables in other pages */
