@@ -5,8 +5,8 @@
   --dim-background: linear-gradient(var(--dim), var(--dim));
   --dim-drop: linear-gradient(
     transparent 0%,
-    transparent 25%,
-    var(--dim) 30%,
+    transparent 20%,
+    var(--dim) 25%,
     var(--dim) 100%
   );
   --light: #f9f9f9;
@@ -74,6 +74,21 @@ header section {
 }
 #title {
   top: 380px;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+#title > *,
+#title h1 {
+  display: inline-block;
+}
+
+#title > img {
+  width: 70%;
+  height: 100%;
+  max-height: 20rem;
+  object-fit: contain;
 }
 
 .title h1,
