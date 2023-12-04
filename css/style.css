@@ -182,12 +182,7 @@ h2 {
 #img1,
 #img2,
 #img3,
-#img4,
-#img5,
-#img6,
-#img7,
-#img8,
-#img9 {
+#img4 {
   display: none;
 }
 
@@ -195,12 +190,7 @@ h2 {
 #img1:checked,
 #img2:checked,
 #img3:checked,
-#img4:checked,
-#img5:checked,
-#img6:checked,
-#img7:checked,
-#img8:checked,
-#img9:checked {
+#img4:checked {
   display: block;
   position: fixed;
   top: 0px;
@@ -217,8 +207,10 @@ h2 {
 .img {
   overflow: hidden;
   width: 187px;
-  aspect-ratio: 1 / 1.4;
+  height: calc(187px * 1.4);
+  /* aspect-ratio: 1 / 1.4; */
   margin: 0.3rem;
+  gap: 1rem;
   box-shadow: 0px 0px 3px var(--dim);
 }
 
@@ -226,36 +218,43 @@ h2 {
 #img1:checked ~ #certificates > label[for="img1"] > .img,
 #img2:checked ~ #certificates > label[for="img2"] > .img,
 #img3:checked ~ #certificates > label[for="img3"] > .img,
-#img4:checked ~ #certificates > label[for="img4"] > .img,
-#img5:checked ~ #certificates > label[for="img5"] > .img,
-#img6:checked ~ #certificates > label[for="img6"] > .img,
-#img7:checked ~ #certificates > label[for="img7"] > .img,
-#img8:checked ~ #certificates > label[for="img8"] > .img,
-#img9:checked ~ #certificates > label[for="img9"] > .img {
+#img4:checked ~ #certificates > label[for="img4"] > .img {
   position: fixed;
   top: 5vh;
   left: 5vw;
   width: 90vw;
   height: 90vh;
-  /* object-fit: contain; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  object-fit: contain;
   overflow: scroll;
   z-index: 3;
   animation: emerge 0.3s;
+  box-shadow: none;
 }
 
 #imgl:checked ~ #certificates > label[for="imgl"] img,
 #img1:checked ~ #certificates > label[for="img1"] img,
 #img2:checked ~ #certificates > label[for="img2"] img,
 #img3:checked ~ #certificates > label[for="img3"] img,
-#img4:checked ~ #certificates > label[for="img4"] img,
-#img5:checked ~ #certificates > label[for="img5"] img,
-#img6:checked ~ #certificates > label[for="img6"] img,
-#img7:checked ~ #certificates > label[for="img7"] img,
-#img8:checked ~ #certificates > label[for="img8"] img,
-#img9:checked ~ #certificates > label[for="img9"] img {
-  object-fit: contain;
-  width: 100%;
+#img4:checked ~ #certificates > label[for="img4"] img {
+  box-shadow: 0px 0px 3px var(--dim);
+  height: 90vh;
+  width: calc(90vh / 1.4);
   background: white;
+}
+@media (max-width: 640px) {
+  #imgl:checked ~ #certificates > label[for="imgl"] img,
+  #img1:checked ~ #certificates > label[for="img1"] img,
+  #img2:checked ~ #certificates > label[for="img2"] img,
+  #img3:checked ~ #certificates > label[for="img3"] img,
+  #img4:checked ~ #certificates > label[for="img4"] img {
+    height: calc(90vw * 1.4);
+    width: 90vw;
+  }
 }
 
 /* Tables in other pages */
