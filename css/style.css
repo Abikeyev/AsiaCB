@@ -146,9 +146,33 @@ h2 {
   /* justify-content: center; */
 }
 
-.certs img {
+.certs .document {
   width: 187px;
   box-shadow: 0px 0px 1px var(--dim);
+}
+
+.certs a {
+  position: relative;
+  bottom: calc(187px * 1.4);
+  left: 156px;
+  background: var(--dim);
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.certs a:hover {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.certs a > img {
+  width: 1.3rem;
+  position: relative;
 }
 
 /* certificates page selector */
@@ -210,9 +234,29 @@ h2 {
   height: calc(187px * 1.4);
   margin: 0.3rem;
   gap: 1rem;
-  box-shadow: 0px 0px 3px var(--dim);
+  box-shadow: 0px 0px 2px var(--dim);
+  border-radius: 5px;
+  border: 1px solid var(--dim-light);
 }
 
+#imgl:checked ~ #certificates > label[for="imgl"] > a,
+#img1:checked ~ #certificates > label[for="img1"] > a,
+#img2:checked ~ #certificates > label[for="img2"] > a,
+#img3:checked ~ #certificates > label[for="img3"] > a,
+#img4:checked ~ #certificates > label[for="img4"] > a {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vh;
+  height: 5vh;
+  padding: 1vh;
+  box-sizing: border-box;
+  top: 5vh;
+  left: 90vw;
+  /* background: red; */
+  z-index: 3;
+}
 #imgl:checked ~ #certificates > label[for="imgl"] > .img,
 #img1:checked ~ #certificates > label[for="img1"] > .img,
 #img2:checked ~ #certificates > label[for="img2"] > .img,
@@ -233,24 +277,26 @@ h2 {
   z-index: 3;
   animation: emerge 0.3s;
   box-shadow: none;
+  border: none;
+  border-radius: 0px;
 }
 
-#imgl:checked ~ #certificates > label[for="imgl"] img,
-#img1:checked ~ #certificates > label[for="img1"] img,
-#img2:checked ~ #certificates > label[for="img2"] img,
-#img3:checked ~ #certificates > label[for="img3"] img,
-#img4:checked ~ #certificates > label[for="img4"] img {
+#imgl:checked ~ #certificates > label[for="imgl"] .document,
+#img1:checked ~ #certificates > label[for="img1"] .document,
+#img2:checked ~ #certificates > label[for="img2"] .document,
+#img3:checked ~ #certificates > label[for="img3"] .document,
+#img4:checked ~ #certificates > label[for="img4"] .document {
   box-shadow: 0px 0px 3px var(--dim);
   height: 90vh;
   width: calc(90vh / 1.4);
   background: white;
 }
 @media (max-width: 640px) {
-  #imgl:checked ~ #certificates > label[for="imgl"] img,
-  #img1:checked ~ #certificates > label[for="img1"] img,
-  #img2:checked ~ #certificates > label[for="img2"] img,
-  #img3:checked ~ #certificates > label[for="img3"] img,
-  #img4:checked ~ #certificates > label[for="img4"] img {
+  #imgl:checked ~ #certificates > label[for="imgl"] .document,
+  #img1:checked ~ #certificates > label[for="img1"] .document,
+  #img2:checked ~ #certificates > label[for="img2"] .document,
+  #img3:checked ~ #certificates > label[for="img3"] .document,
+  #img4:checked ~ #certificates > label[for="img4"] .document {
     height: calc(90vw * 1.4);
     width: 90vw;
   }
@@ -299,10 +345,65 @@ tr {
   box-sizing: border-box;
 }
 
+/* adresses in the contacts page */
+dl {
+  margin: 12px 120px;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin: 0.5rem 0px;
+}
+.contacts {
+  border-radius: 1.3rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  display: inline-block;
+}
+#contact_face {
+  background: linear-gradient(limegreen, green);
+  border: 1px solid green;
+}
+#contact_mail {
+  background: linear-gradient(red, darkred);
+  border: 1px solid darkred;
+}
+.contacts nav::before,
+.contacts a::before,
+#contact_face nav::before,
+#contact_face a::before {
+  background-size: cover;
+  content: "";
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 0.2rem;
+}
+#contact_face nav::before {
+  background-image: url(../images/contact-book-svgrepo-com.svg);
+}
+#contact_face a::before {
+  background-image: url("../images/phone-svgrepo-com(1).svg");
+}
+#contact_mail a::before {
+  background-image: url("../images/email-svgrepo-com.svg");
+}
+.contacts > *,
+#contact_face > * {
+  display: inline-block;
+  color: white;
+  /* vertical-align: super; */
+  margin-top: -4px;
+}
+
 /* map in the contacts page */
 .map {
   display: flex;
   justify-content: center;
+  width: calc(100vw - 240px);
 }
 
 .map iframe {
@@ -434,16 +535,34 @@ footer a:hover {
   #certificates,
   .certs {
     justify-content: center;
+    width: 90vw;
   }
 }
 @media (max-width: 640px) {
   #title,
   .title {
+    top: 11rem;
+    gap: unset;
+    align-items: unset;
     left: 5vw;
+    flex-direction: column;
+  }
+  #title h1 {
+    font-size: 2.2rem;
+  }
+  main {
+    margin: 60px 0px;
+    gap: 60px;
   }
   .info,
   .certs,
   main section {
     padding: 24px 5vw;
+  }
+  .map {
+    width: 90vw;
+  }
+  dl {
+    margin: 12px 5vw;
   }
 }
