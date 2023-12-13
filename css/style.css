@@ -347,7 +347,7 @@ tr {
 
 /* adresses in the contacts page */
 dl {
-  margin: 12px 120px;
+  margin: 12px 0px;
 }
 dt {
   font-weight: bold;
@@ -562,7 +562,7 @@ footer a:hover {
   .map {
     width: 90vw;
   }
-  dl {
-    margin: 12px 0px;
-  }
+  /* dl {
+     margin: 12px 0px;
+     } */
 }
