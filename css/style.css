@@ -383,13 +383,13 @@ dd {
   top: 0.2rem;
 }
 #contact_face nav::before {
-  background-image: url(../images/contact-book-svgrepo-com.svg);
+  background-image: url(../images/contact.svg);
 }
 #contact_face a::before {
-  background-image: url("../images/phone-svgrepo-com(1).svg");
+  background-image: url("../images/phone.svg");
 }
 #contact_mail a::before {
-  background-image: url("../images/email-svgrepo-com.svg");
+  background-image: url("../images/email.svg");
 }
 .contacts > *,
 #contact_face > * {
@@ -563,6 +563,6 @@ footer a:hover {
     width: 90vw;
   }
   dl {
-    margin: 12px 5vw;
+    margin: 12px 0px;
   }
 }
